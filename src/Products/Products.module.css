@@ -1,0 +1,44 @@
+ul.productMain {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-block-start: 40px;
+}
+/* Add a transition for the transform property */
+li.productItem {
+  border: solid 1px var(--border-color);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  aspect-ratio: 1/0.7;
+  animation: fadeIn 1.5s forwards ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 768px) { 
+  ul.productMain {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  ul.productMain {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  li.productItem {
+    padding: 8px;
+    aspect-ratio: 1/1.5;
+
+  }
+  
+}

@@ -1,13 +1,151 @@
-body {
+@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,bold,italic&subset=latin,latin-ext");
+*,
+*::after,
+*::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --direction: ltr;
+  --container: 1320px;
+  --font-family: "Montserrat";
+  --primary-color: #832dcb;
+  --secondary-color: #323232;
+  --background-color: #fdf5ff;
+  --border-color: #c4bebe;
+  --text-color: #949494;
+  --h1-size: 3.12rem;
+  --h2-size: 1.87rem;
+  --h3-size: 1.5rem;
+  --text-size: 1rem;
+  --text-size2: 1.12rem;
+  --text-size3: 0.8rem;
+  --line-height: 180%;
+  --gap: 6rem;
+  --border-radius: 10px;
+  --border-radius2: 40px;
+  --box-shadow: 0 2px 0 0 rgba(169, 183, 190, 0.15);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  direction: var(--direction);
+  box-sizing: border-box;
+  
 }
+button,
+input,
+textarea,
+a {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: 0 0;
+  text-decoration: none;
+  font-family: var(--font-family);
+}
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr var(--container) 1fr;
+  grid-template-areas: ". content .";
+}
+
+.container > * {
+  grid-area: content;
+}
+.container > main {
+  overflow: hidden;
+  min-height: 100vh;
+}
+/*********************
+START: MEDIA
+*********************/
+/* container  */
+@media screen and (min-width: 2560px) {
+  footer {
+    max-width: 1500px;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+  }
+}
+
+@media screen and (min-width: 1920px) and (max-width: 2559px) {
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1820px 1fr;
+    grid-template-areas: ". content .";
+  }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1330px 1fr;
+    grid-template-areas: ". content .";
+  }
+}
+
+@media screen and (min-width: 1320px) and (max-width: 1439px) {
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1310px 1fr;
+    grid-template-areas: ". content .";
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1319px) {
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1140px 1fr;
+    grid-template-areas: ". content .";
+  }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 970px 1fr;
+    grid-template-areas: ". content .";
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  :root {
+    --gap: 4rem;
+  }
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 750px 1fr;
+    grid-template-areas: ". content .";
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 95% 1fr;
+    grid-template-areas: ". content .";
+  }
+}
+/* container */

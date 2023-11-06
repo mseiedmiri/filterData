@@ -1,0 +1,79 @@
+.carousel {
+  margin-block-start: 40px;
+  position: relative;
+}
+ul.mainCarousel {
+  display: flex;
+  width: 93%;
+  flex-wrap: nowrap;
+  position: relative;
+
+  margin: 0 auto;
+}
+.carousel::before,
+.carousel::after {
+  content: "";
+  width: 45px;
+  height: 100%;
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  background: rgb(255, 255, 255);
+  z-index: 1;
+}
+.carousel::after {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+}
+/* Filter On And Off */
+li.filterOn , li.addedSites {
+  padding: 5px 20px;
+  border: solid 1px var(--border-color);
+  flex-shrink: 0;
+  margin-inline-end: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius2);
+  color: var(--text-color);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+}
+li.addedSites {
+  transform: translateX(-25px) scale(0);
+  animation: bubble .5s forwards;
+}
+@keyframes bubble {
+  0%   { transform:scale(0.5); opacity:0.0; }
+  50%  { transform:scale(1.2); opacity:0.5; }
+  100% { transform:scale(1.0); opacity:1.0; }
+}
+li.filterOn.active , li.addedSites {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background-color: var(--background-color);
+}
+li.filterOn img {
+  width: 15px;
+  margin-inline-end: 5px;
+  filter: invert(81%) sepia(3%) saturate(374%) hue-rotate(314deg)
+    brightness(100%) contrast(79%);
+}
+li.filterOn.active img {
+  filter: invert(23%) sepia(85%) saturate(2225%) hue-rotate(261deg)
+    brightness(86%) contrast(99%);
+}
+li.addedSites button  {
+  display: flex;
+  align-items: center;
+}
+li.addedSites button img {
+  width: 10px;
+  margin-inline-start: 8px;
+  filter: invert(23%) sepia(85%) saturate(2225%) hue-rotate(261deg)
+  brightness(86%) contrast(99%);
+}
