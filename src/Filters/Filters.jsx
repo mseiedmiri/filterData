@@ -48,8 +48,6 @@ const Filters = ({ handleChangeCat, handleChangeSite, data, sites , setSites  })
         const children = parentElement.children
         const screenWidth = dimensions - 100
         let totalWidthWithMargin = 0
-        console.log("site" , dimensions)
-
         for (let i = 0; i < children.length; i++) {
           const child = children[i]
           const computedStyle = window.getComputedStyle(child)

@@ -15,9 +15,13 @@ h3 {
   margin-block: 10px;
   font-size: var(--text-size);
   color: var(--text-color);
+  line-height: var(--line-height);
+
 }
 p {
   font-size: var(--text-size3);
+  line-height: var(--line-height);
+
 }
 /* On Or Off Button */
 li.filterOn {
@@ -128,7 +132,7 @@ li.filterOn.active img {
 }
 .customSelect ul li button {
   display: block;
-  padding: 8px;
+  padding: 8px 5px;
   border-bottom: solid 1px #c4bebe52;
   width: 100%;
   text-align: left;
@@ -136,10 +140,12 @@ li.filterOn.active img {
 .customSelect ul li:last-child button {
   border-bottom: none;
 }
-@media screen and (max-width: 768px) { 
-
+@media screen and (min-width: 993px) and (max-width: 1340px) {
+  .underImg {
+    width: 32%;
+  }
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) { 
   .underImg {
     width: 35%;
   }
